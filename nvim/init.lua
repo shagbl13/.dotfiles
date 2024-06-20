@@ -1,1 +1,1 @@
-require("gbl")
+require "gbl"
