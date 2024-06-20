@@ -28,22 +28,25 @@ vim.opt.isfname:append("@-@")
 vim.opt.path:append("**")
 
 vim.opt.updatetime = 50
-
 vim.opt.splitright = true
+vim.o.mouse = ""
 
 
 
-vim.api.nvim_create_autocmd({"bufread", "bufnewfile", "bufwritepre"}, {
-    pattern = {"*.php"},
-    callback = function()
-      vim.opt.makeprg =  "php src/index.php"
-    end
+vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
+  pattern = { "*.php" },
+  callback = function()
+    vim.opt.makeprg = "php src/index.php"
+  end
 })
 
-vim.api.nvim_create_autocmd({"bufread", "bufnewfile", "bufwritepre"}, {
-    pattern = {"*.ts"},
-    callback = function()
-      vim.opt.makeprg =  "tsc & node dist/app.js"
-    end
+vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
+  pattern = { "*.ts" },
+  callback = function()
+    vim.opt.makeprg = "tsc & node dist/app.js"
+  end
 })
 
+vim.cmd([[
+filetype plugin on
+]])
