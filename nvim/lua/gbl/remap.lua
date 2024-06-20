@@ -52,7 +52,7 @@ keymap("n", "<A-l>", "<C-w>l")
 
 keymap("n", "<A-p>", "<cmd>tabprevious<CR>")
 keymap("n", "<A-n>", "<cmd>tabnext<CR>")
-keymap("n", "<leader>t", "<cmd>tabnew<CR>")
+keymap("n", "<A-t>", "<cmd>tabnew<CR>")
 
 keymap({ "n", "v" }, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
