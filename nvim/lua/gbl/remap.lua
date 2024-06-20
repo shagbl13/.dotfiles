@@ -61,3 +61,6 @@ keymap("n", "-", "<C-x>")
 
 keymap("n", "<C-a>", "ggVG")
 keymap("n", "<C-x>", "ggVGd")
+
+keymap("n", "<leader>t", ":Git push -u origin ");
+vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
