@@ -51,9 +51,8 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run
 # A more modern dmenu replacement is rofi:
-bindsym  $mod+/ exec "rofi -modi drun,run -show drun"
+bindsym  $mod+d exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
 # .desktop file. It is a wrapper around dmenu, so you need that installed.
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
@@ -209,8 +208,8 @@ mode "$mode_launcher" {
 
 exec_always --no-startup-id picom &
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-exec_always --no-startup-id setxkbmap -layout 'en' -variant 'us-qwerty' -model 'pc105' -option 'ctrl:swapcaps' 
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/bg/wp2123907-attack-on-titan-hd-wallpapers.png
+##exec_always --no-startup-id setxkbmap -layout 'en' -variant 'us-qwerty' -model 'pc105' -option 'ctrl:swapcaps' 
+exec_always --no-startup-id feh --bg-scale ~/dotfiles/bg/bg1.jpg
 
 exec_always --no-startup-id qutebrowser
 # exec_always no-startup-id emacs

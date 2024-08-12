@@ -61,5 +61,6 @@ xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
 #setxkbmap -layout 'fr' -variant 'us-azerty' -model 'pc105' -option 'ctrl:swapcaps' 
 
-feh --bg-scale ~/.dotfiles/bg/wp2123907-attack-on-titan-hd-wallpapers.png
+#feh --bg-scale ~/.dotfiles/bg/bg1.jpg
 #exec dbus-launch --exit-with-session emacs -mm --debug-init 
+i3

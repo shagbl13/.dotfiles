@@ -3,13 +3,12 @@ local keymap = vim.keymap.set
 vim.g.mapleader = " "
 
 keymap("n", "<leader>e", vim.cmd.Ex)
-keymap("n", "<leader>cn", ":e ~/AppData/Local/nvim<cr>")
-keymap("n", "<leader>cw", ":e ~/.config/wezterm/<cr>")
-keymap("n", "<leader>cq", "<cmd>e ~/AppData/Roaming/qutebrowser/config/<cr>");
-keymap("n", "<leader>gop", "<cmd>e ~/brice/data_manager_main/<cr>");
-keymap("n", "<leader>gpp", "<cmd>e c:/xampp/htdocs/gestion_client<cr>");
-keymap("n", "<leader>gtp", "<cmd>e ~/brice/typescript/<cr>");
+keymap("n", "<leader>cn", ":e ~/.dotfiles/nvim/<cr>")
+keymap("n", "<leader>ci", ":e ~/.dotfiles/.config/i3/config<cr>")
+keymap("n", "<leader>cq", "<cmd>e ~/.dotfiles/.config/qutebrowser/config.py<cr>");
 keymap("n", "<leader>pc", "<cmd>make<cr>");
+
+keymap("n", "<leader>gl", "<cmd>e ~/lab/<cr>");
 
 
 keymap("v", "J", ":m '>+1<CR>gv=gv")
