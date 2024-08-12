@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 
 keymap("n", "<leader>e", vim.cmd.Ex)
 keymap("n", "<leader>cn", ":e ~/.dotfiles/nvim/<cr>")
+keymap("n", "<leader>cd", ":e ~/.dotfiles/<cr>")
 keymap("n", "<leader>ci", ":e ~/.dotfiles/.config/i3/config<cr>")
 keymap("n", "<leader>cq", "<cmd>e ~/.dotfiles/.config/qutebrowser/config.py<cr>");
 keymap("n", "<leader>pc", "<cmd>make<cr>");
