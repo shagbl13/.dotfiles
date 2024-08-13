@@ -9,6 +9,8 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
 vim.opt.smartindent = true
+vim.opt.smartcase = true
+vim.opt.ignorecase = true
 
 vim.opt.wrap = true
 
@@ -46,6 +48,14 @@ vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
     vim.opt.makeprg = "tsc & node dist/app.js"
   end
 })
+
+vim.api.nvim_create_autocmd({ "bufread", "bufnewfile"}, {
+  pattern = { "*.blade.php" },
+  callback = function()
+    vim.opt.filetype = 'blade'
+  end
+})
+
 
 vim.cmd([[
 filetype plugin on

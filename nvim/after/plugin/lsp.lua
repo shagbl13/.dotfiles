@@ -10,6 +10,7 @@ lsp.ensure_installed({
   'lua_ls',
   'gopls',
   'ltex',
+  'html',
 })
 
 -- Fix Undefined global 'vim'
@@ -24,8 +25,12 @@ lsp.configure('lua-language-server', {
 })
 
 
+lsp.configure('html', {
+  filetypes = {"blade", "php", "html", "htmldjango", "javascriptreact", "typescriptreact", "vue" }
+})
+
 lsp.configure('emmet_ls', {
-  filetypes = { "php", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
+  filetypes = {"blade", "php", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
 })
 
 local cmp = require('cmp')
