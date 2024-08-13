@@ -14,15 +14,50 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
-    use("tpope/tokyonight.nvim")
+    use("folke/tokyonight.nvim")
+
+    use {
+      "adalessa/laravel.nvim",
+      requires = {
+        "nvim-telescope/telescope.nvim",
+        "tpope/vim-dotenv",
+        "MunifTanjim/nui.nvim",
+        "nvimtools/none-ls.nvim",
+      },
+      cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
+      keys = {
+        { "<leader>la", ":Laravel artisan<cr>" },
+        { "<leader>lr", ":Laravel routes<cr>" },
+        { "<leader>lm", ":Laravel related<cr>" },
+      },
+      config = function ()
+        require("laravel").setup{}
+      end
+    }
+
+    use {
+      "windwp/nvim-autopairs",
+      event = "InsertEnter",
+      config = function()
+        require("nvim-autopairs").setup {}
+      end
+    }
+
+
+    use({
+      "kylechui/nvim-surround",
+      tag = "*", -- Use for stability; omit to use `main` branch for the latest features
+      config = function()
+        require("nvim-surround").setup({
+          -- Configuration here, or leave empty to use defaults
+        })
+      end
+    })
 
     use({
 
         'rose-pine/neovim',
         as = 'rose-pine',
-        config = function()
-            vim.cmd('colorscheme rose-pine')
-        end
     })
 
     use({
