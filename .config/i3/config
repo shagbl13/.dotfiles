@@ -45,7 +45,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -136,7 +136,7 @@ bindsym $mod+0 workspace number $ws10
 assign [class="qutebrowser"] number $ws2
 assign [class="firefox"] number $ws10
 assign [class="hakuneku-desktop-nightly"] number $ws5
-assign [class="Alacritty"] number $ws1
+assign [class="gnome-terminal"] number $ws1
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -193,12 +193,12 @@ bar {
 
 set $mode_launcher Launch: [q]utebrowser [f]irefox [e]macs
 
-bindsym $mod+b "$mode_launcher"
+bindsym $mod+b mode "$mode_launcher"
 
 mode "$mode_launcher" {
 	bindsym q exec --no-startup-id qutebrowser
 	bindsym f exec --no-startup-id firefox
-	bindsym e exec --no-startup-id alacritty
+	bindsym t exec --no-startup-id gnome-terminal
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
