@@ -3,7 +3,7 @@ local keymap = vim.keymap.set
 vim.g.mapleader = " "
 
 keymap("n", "<leader>e", vim.cmd.Ex)
-keymap("n", "<leader>cn", ":e ~/.dotfiles/nvim/<cr>")
+keymap("n", "<leader>cn", ":e ~/.dotfiles/.config/nvim/<cr>")
 keymap("n", "<leader>cd", ":e ~/.dotfiles/<cr>")
 keymap("n", "<leader>ci", ":e ~/.dotfiles/.config/i3/config<cr>")
 keymap("n", "<leader>cq", "<cmd>e ~/.dotfiles/.config/qutebrowser/config.py<cr>");
