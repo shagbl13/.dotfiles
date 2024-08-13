@@ -67,6 +67,6 @@ alias gS='git stash'
 PS1='[\u@\h \W]\$ '
 
 # /usr/share/z/z.sh
-# export PATH=/home/gbl13/.local/bin:/usr/share/z:/home/gbl13/.guix-profile/bin:$PATH
+export PATH=/home/gbl/.local/bin:/usr/share/z:/home/gbl/script/:$PATH
 
 set -o vi

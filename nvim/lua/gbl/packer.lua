@@ -14,7 +14,9 @@ return require('packer').startup(function(use)
         requires = { { 'nvim-lua/plenary.nvim' } }
     }
 
+
     use("folke/tokyonight.nvim")
+    use("catppuccin/nvim")
 
     use {
       "adalessa/laravel.nvim",
@@ -25,11 +27,6 @@ return require('packer').startup(function(use)
         "nvimtools/none-ls.nvim",
       },
       cmd = { "Sail", "Artisan", "Composer", "Npm", "Yarn", "Laravel" },
-      keys = {
-        { "<leader>la", ":Laravel artisan<cr>" },
-        { "<leader>lr", ":Laravel routes<cr>" },
-        { "<leader>lm", ":Laravel related<cr>" },
-      },
       config = function ()
         require("laravel").setup{}
       end
