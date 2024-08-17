@@ -25,12 +25,16 @@ lsp.configure('lua-language-server', {
 })
 
 
+lsp.configure('stimulus_ls', {
+  filetypes = {"blade", "eruby", "html", "ruby" }
+})
+
 lsp.configure('html', {
-  filetypes = {"blade", "php", "html", "htmldjango", "javascriptreact", "typescriptreact", "vue" }
+  filetypes = {"blade", "html", "htmldjango", "javascriptreact", "typescriptreact", "vue" }
 })
 
 lsp.configure('emmet_ls', {
-  filetypes = {"blade", "php", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
+  filetypes = {"blade", "astro", "css", "eruby", "html", "htmldjango", "javascriptreact", "less", "pug", "sass", "scss", "svelte", "typescriptreact", "vue" }
 })
 
 local cmp = require('cmp')

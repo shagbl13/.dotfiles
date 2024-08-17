@@ -59,8 +59,8 @@ xrdb ~/.dotfiles/.Xresources
 
 xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
-#setxkbmap -layout 'fr' -variant 'us-azerty' -model 'pc105' -option 'ctrl:swapcaps' 
+setxkbmap -layout 'us' -variant 'us-qwerty' -model 'pc105' -option 'ctrl:swapcaps' 
 
-#feh --bg-scale ~/.dotfiles/bg/bg1.jpg
+feh --bg-scale ~/.dotfiles/bg/bg1.jpg
 #exec dbus-launch --exit-with-session emacs -mm --debug-init 
 i3

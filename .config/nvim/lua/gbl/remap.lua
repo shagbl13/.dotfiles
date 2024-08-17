@@ -10,6 +10,7 @@ keymap("n", "<leader>cq", "<cmd>e ~/.dotfiles/.config/qutebrowser/config.py<cr>"
 keymap("n", "<leader>pc", "<cmd>make<cr>");
 
 keymap("n", "<leader>gl", "<cmd>e ~/lab/<cr>");
+keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>");
 
 
 keymap("v", "J", ":m '>+1<CR>gv=gv")
@@ -62,5 +63,5 @@ keymap("n", "-", "<C-x>")
 keymap("n", "<C-a>", "ggVG")
 keymap("n", "<C-x>", "ggVGd")
 
-keymap("n", "<leader>t", ":Git push -u origin ");
+keymap("n", "<leader>t", ":Git push -u origin<cr>");
 vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
