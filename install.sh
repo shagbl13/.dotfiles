@@ -28,6 +28,7 @@ ln -sfv ~/.dotfiles/.Xresources ~/
 ln -sfv ~/.dotfiles/.config/* ~/.config/
 ln -sfv ~/.dotfiles/.emacs.d/* ~/.emacs.d/
 ln -sfv ~/.dotfiles/.xinitrc ~/
+ln -sfv ~/.dotfiles/.config/nvim/* ~/.config/nvim
 
 xdg-settings set default-web-browser org.qutebrowser.qutebrowser.desktop
 
