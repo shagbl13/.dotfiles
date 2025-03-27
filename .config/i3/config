@@ -45,7 +45,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec gnome-terminal
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -137,6 +137,7 @@ assign [class="qutebrowser"] number $ws2
 assign [class="firefox"] number $ws10
 assign [class="hakuneku-desktop-nightly"] number $ws5
 assign [class="gnome-terminal"] number $ws1
+assign [class="alacritty"] number $ws1
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -198,7 +199,7 @@ bindsym $mod+b mode "$mode_launcher"
 mode "$mode_launcher" {
 	bindsym q exec --no-startup-id qutebrowser
 	bindsym f exec --no-startup-id firefox
-	bindsym t exec --no-startup-id gnome-terminal
+	bindsym t exec --no-startup-id alacritty
 
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -209,7 +210,9 @@ mode "$mode_launcher" {
 ##exec_always --no-startup-id picom &
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id setxkbmap -layout 'en' -variant 'us-qwerty' -model 'pc105' -option 'ctrl:swapcaps' 
-exec_always --no-startup-id feh --bg-scale ~/dotfiles/bg/bg1.jpg
+exec_always --no-startup-id feh --bg-scale ~/.dotfiles/bg/bg.jpg
 
 exec_always --no-startup-id qutebrowser
+exec_always --no-startup-id alacritty
+exec_always --no-startup-id discord
 # exec_always no-startup-id emacs
