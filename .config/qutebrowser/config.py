@@ -138,6 +138,22 @@ c.content.headers.user_agent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
+
+# User agent to send.  The following placeholders are defined:  *
+# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
+# The underlying WebKit version (set to a fixed value   with
+# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
+# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
+# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
+# QtWebEngine. * `{upstream_browser_version}`: The corresponding
+# Safari/Chrome version. * `{qutebrowser_version}`: The currently
+# running qutebrowser version.  The default value is equal to the
+# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
+# read from JavaScript is always the global value. With QtWebEngine
+# between 5.12 and 5.14 (inclusive), changing the value exposed to
+# JavaScript requires a restart.
+# Type: FormatString
 config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{webkit_version} (KHTML, like Gecko) {upstream_browser_key}/{upstream_browser_version} Safari/{webkit_version}', 'https://web.whatsapp.com/')
 
 # User agent to send.  The following placeholders are defined:  *
@@ -154,23 +170,7 @@ config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/{w
 # between 5.12 and 5.14 (inclusive), changing the value exposed to
 # JavaScript requires a restart.
 # Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:90.0) Gecko/20100101 Firefox/90.0', 'https://accounts.google.com/*')
-
-# User agent to send.  The following placeholders are defined:  *
-# `{os_info}`: Something like "X11; Linux x86_64". * `{webkit_version}`:
-# The underlying WebKit version (set to a fixed value   with
-# QtWebEngine). * `{qt_key}`: "Qt" for QtWebKit, "QtWebEngine" for
-# QtWebEngine. * `{qt_version}`: The underlying Qt version. *
-# `{upstream_browser_key}`: "Version" for QtWebKit, "Chrome" for
-# QtWebEngine. * `{upstream_browser_version}`: The corresponding
-# Safari/Chrome version. * `{qutebrowser_version}`: The currently
-# running qutebrowser version.  The default value is equal to the
-# unchanged user agent of QtWebKit/QtWebEngine.  Note that the value
-# read from JavaScript is always the global value. With QtWebEngine
-# between 5.12 and 5.14 (inclusive), changing the value exposed to
-# JavaScript requires a restart.
-# Type: FormatString
-config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/99 Safari/537.36', 'https://*.slack.com/*')
+config.set('content.headers.user_agent', 'Mozilla/5.0 ({os_info}; rv:133.0) Gecko/20100101 Firefox/133.0', 'https://accounts.google.com/*')
 
 # Load images automatically in web pages.
 # Type: Bool
@@ -182,8 +182,14 @@ config.set('content.images', True, 'devtools://*')
 
 # Allow JavaScript to read from or write to the clipboard. With
 # QtWebEngine, writing the clipboard as response to a user interaction
-# is always allowed.
-# Type: Bool
+# is always allowed. On Qt < 6.8, the `ask` setting is equivalent to
+# `none` and permission needs to be granted manually via this setting.
+# Type: JSClipboardPermission
+# Valid values:
+#   - none: Disable access to clipboard.
+#   - access: Allow reading from and writing to the clipboard.
+#   - access-paste: Allow accessing the clipboard and pasting clipboard content.
+#   - ask: Prompt when requested (grants 'access-paste' permission).
 c.content.javascript.clipboard = 'access-paste'
 
 # Enable JavaScript.
@@ -201,6 +207,14 @@ config.set('content.javascript.enabled', True, 'chrome://*/*')
 # Enable JavaScript.
 # Type: Bool
 config.set('content.javascript.enabled', True, 'qute://*/*')
+
+# Allow locally loaded documents to access remote URLs.
+# Type: Bool
+config.set('content.local_content_can_access_remote_urls', True, 'file:///home/gbl13/.local/share/qutebrowser/userscripts/*')
+
+# Allow locally loaded documents to access other local URLs.
+# Type: Bool
+config.set('content.local_content_can_access_file_urls', False, 'file:///home/gbl13/.local/share/qutebrowser/userscripts/*')
 
 # Allow websites to show notifications.
 # Type: BoolAsk
@@ -243,9 +257,10 @@ config.set('content.register_protocol_handler', True, 'https://mail.proton.me#ma
 c.downloads.position = 'bottom'
 
 # Handler for selecting file(s) in forms. If `external`, then the
-# commands specified by `fileselect.single_file.command` and
-# `fileselect.multiple_files.command` are used to select one or multiple
-# files respectively.
+# commands specified by `fileselect.single_file.command`,
+# `fileselect.multiple_files.command` and `fileselect.folder.command`
+# are used to select one file, multiple files, and folders,
+# respectively.
 # Type: String
 # Valid values:
 #   - default: Use the default file selector.
@@ -292,10 +307,12 @@ c.statusbar.padding = {'top': 2, 'right': 2, 'bottom': 2, 'left': 2}
 #   - scroll: Percentage of the current page position like `10%`.
 #   - scroll_raw: Raw percentage of the current page position like `10`.
 #   - history: Display an arrow when possible to go back/forward in history.
+#   - search_match: A match count when searching, e.g. `Match [2/10]`.
 #   - tabs: Current active tab, e.g. `2`.
 #   - keypress: Display pressed keys when composing a vi command.
 #   - progress: Progress bar for the current page loading.
 #   - text:foo: Display the static text after the colon, `foo` in the example.
+#   - clock: Display current time. The format can be changed by adding a format string via `clock:...`. For supported format strings, see https://docs.python.org/3/library/datetime.html#strftime-and-strptime-format-codes[the Python datetime documentation].
 c.statusbar.widgets = ['keypress', 'progress', 'url', 'scroll']
 
 # Scaling factor for favicons in the tab bar. The tab size is unchanged,
@@ -646,15 +663,13 @@ c.colors.tabs.selected.even.fg = '#f8f8f2'
 # Type: QtColor
 c.colors.tabs.selected.even.bg = '#282a36'
 
-# Render all web contents using a dark theme. Example configurations
-# from Chromium's `chrome://flags`:  - "With simple HSL/CIELAB/RGB-based
-# inversion": Set   `colors.webpage.darkmode.algorithm` accordingly.  -
-# "With selective image inversion": Set
-# `colors.webpage.darkmode.policy.images` to `smart`.  - "With selective
-# inversion of non-image elements": Set
-# `colors.webpage.darkmode.threshold.text` to 150 and
-# `colors.webpage.darkmode.threshold.background` to 205.  - "With
-# selective inversion of everything": Combines the two variants   above.
+# Render all web contents using a dark theme. On QtWebEngine < 6.7, this
+# setting requires a restart and does not support URL patterns, only the
+# global setting is applied. Example configurations from Chromium's
+# `chrome://flags`: - "With simple HSL/CIELAB/RGB-based inversion": Set
+# `colors.webpage.darkmode.algorithm` accordingly, and   set
+# `colors.webpage.darkmode.policy.images` to `never`.  - "With selective
+# image inversion": qutebrowser default settings.
 # Type: Bool
 c.colors.webpage.darkmode.enabled = True
 
@@ -690,6 +705,7 @@ config.unbind('d')
 config.bind('dc', 'download-cancel')
 config.bind('dd', 'tab-close')
 config.bind('dl', 'youtube-dl {url}')
+config.bind('do', 'download-open')
 config.bind('dr', 'download-retry')
 config.unbind('m')
 config.bind('mf', 'spawn -d firefox {url}')

@@ -39,6 +39,7 @@ vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
   pattern = { "*.php" },
   callback = function()
     vim.opt.makeprg = "php src/index.php"
+    vim.lsp.buf.format()
   end
 })
 

@@ -7,6 +7,9 @@ keymap("n", "<leader>cn", ":e ~/.dotfiles/.config/nvim/<cr>")
 keymap("n", "<leader>cd", ":e ~/.dotfiles/<cr>")
 keymap("n", "<leader>ci", ":e ~/.dotfiles/.config/i3/config<cr>")
 keymap("n", "<leader>cq", "<cmd>e ~/.dotfiles/.config/qutebrowser/config.py<cr>");
+keymap("n", "<leader>ct", "<cmd>e ~/.dotfiles/.config/tmux/tmux.conf<cr>");
+keymap("n", "<leader>cw", "<cmd>e ~/repos/work<cr>");
+keymap("n", "<leader>cp", "<cmd>e ~/repos/personal<cr>");
 keymap("n", "<leader>pc", "<cmd>make<cr>");
 
 keymap("n", "<leader>gl", "<cmd>e ~/lab/<cr>");

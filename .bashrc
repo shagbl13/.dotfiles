@@ -67,6 +67,8 @@ alias gS='git stash'
 PS1='[\u@\h \W]\$ '
 
 # /usr/share/z/z.sh
-export PATH=/home/gbl/.local/bin:/usr/share/z:/home/gbl/script/:$PATH
+export PATH=$HOME/.local/bin:/usr/share/z:/home/gbl13/script/:$HOME/.symfony5/bin:$PATH
+export PGDATA=/var/lib/postgres/data
+export PGUSER=gbl13
 
 set -o vi
