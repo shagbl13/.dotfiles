@@ -2,7 +2,7 @@ local keymap = vim.keymap.set
 
 vim.g.mapleader = " "
 
-keymap("n", "<leader>e", vim.cmd.Ex)
+keymap("n", "<leader>e", ":Ex<cr>")
 keymap("n", "<leader>cn", ":e ~/.dotfiles/.config/nvim/<cr>")
 keymap("n", "<leader>cd", ":e ~/.dotfiles/<cr>")
 keymap("n", "<leader>ci", ":e ~/.dotfiles/.config/i3/config<cr>")
@@ -68,4 +68,4 @@ keymap("n", "<C-a>", "ggVG")
 keymap("n", "<C-x>", "ggVGd")
 
 keymap("n", "<leader>t", ":Git push -u origin<cr>");
-vim.keymap.set("n", "<leader>gs", vim.cmd.Git)
+vim.keymap.set("n", "<leader>gs", ":Git<cr>")

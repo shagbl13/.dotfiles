@@ -69,7 +69,6 @@ bindsym $mod+l focus right
 
 
 bindsym $mod+b exec firefox
-bindsym $mod+g exec google-chrome
 bindsym $mod+q exec qutebrowser
 bindsym $mod+t exec telegram-desktop
 bindsym $mod+c exec discord
@@ -145,10 +144,7 @@ bindsym $mod+0 workspace number $ws10
 
 #Assign application to a specific workspace
 assign [class="qutebrowser"] number $ws2
-assign [class="Google-chrome"] number $ws9
 assign [class="firefox"] number $ws9
-assign [class="Google-chrome"] number $ws9
-assign [class="google-chrome"] number $ws9
 assign [class="hakuneku-desktop-nightly"] number $ws5
 assign [class="ktouch"] number $ws5
 assign [class="vlc"] number $ws5
@@ -157,7 +153,6 @@ assign [class="gnome-terminal"] number $ws1
 assign [class="Alacritty"] number $ws1
 assign [class="discord"] number $ws10
 assign [class="TelegramDesktop"] number $ws10
-
 
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
@@ -227,13 +222,10 @@ bar {
 
 
 #exec_always --no-startup-id picom &
-exec_always --no-startup-id feh --bg-scale ~/.dotfiles/bg/blue_city.jpg
+exec_always --no-startup-id feh --bg-scale ~/.dotfiles/bg/bg1.jpg
 exec_always --no-startup-id setxkbmap -layout 'en' -variant 'us-qwerty' -model 'pc105' -option 'ctrl:swapcaps' 
-
 exec_always --no-startup-id qutebrowser
 exec_always --no-startup-id alacritty
-exec_always --no-startup-id discord
-exec_always --no-startup-id telegram-desktop
 
 ##exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
