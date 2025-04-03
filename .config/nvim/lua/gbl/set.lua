@@ -8,6 +8,10 @@ vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 
+
+
+vim.opt.clipboard = unnamed
+
 vim.opt.smartindent = true
 vim.opt.smartcase = true
 vim.opt.ignorecase = true
@@ -31,7 +35,14 @@ vim.opt.path:append("**")
 
 vim.opt.updatetime = 50
 vim.opt.splitright = true
-vim.o.mouse = ""
+
+
+vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
+  pattern = { "*.*" },
+  callback = function()
+    vim.lsp.buf.format()
+  end
+})
 
 
 

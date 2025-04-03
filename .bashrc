@@ -70,5 +70,11 @@ PS1='[\u@\h \W]\$ '
 export PATH=$HOME/.local/bin:/usr/share/z:/home/gbl13/script/:$HOME/.symfony5/bin:$PATH
 export PGDATA=/var/lib/postgres/data
 export PGUSER=gbl13
+export VISUAL=nvim
+export EDITOR=nvim
+
+#QT_QUICK_BACKEND=software qutebrowser
 
 set -o vi
+. "$HOME/.cargo/env"
+
