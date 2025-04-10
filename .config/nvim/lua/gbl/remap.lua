@@ -6,6 +6,7 @@ keymap("n", "<leader>e", ":Ex<cr>")
 keymap("n", "<leader>cn", ":e ~/.dotfiles/.config/nvim/<cr>")
 keymap("n", "<leader>cd", ":e ~/.dotfiles/<cr>")
 keymap("n", "<leader>ci", ":e ~/.dotfiles/.config/i3/config<cr>")
+keymap("n", "<leader>cb", ":e ~/.dotfiles/.bashrc<cr>")
 keymap("n", "<leader>cq", "<cmd>e ~/.dotfiles/.config/qutebrowser/config.py<cr>");
 keymap("n", "<leader>ct", "<cmd>e ~/.dotfiles/.config/tmux/tmux.conf<cr>");
 keymap("n", "<leader>cw", "<cmd>e ~/repos/work<cr>");
@@ -68,4 +69,5 @@ keymap("n", "<C-a>", "ggVG")
 keymap("n", "<C-x>", "ggVGd")
 
 keymap("n", "<leader>t", ":Git push -u origin<cr>");
-vim.keymap.set("n", "<leader>gs", ":Git<cr>")
+keymap("n", "<leader>t", ":Git push -u origin<cr>");
+keymap("n", "<leader>gs", ":Git<cr>")

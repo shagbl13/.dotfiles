@@ -37,14 +37,22 @@ vim.opt.updatetime = 50
 vim.opt.splitright = true
 
 
+--vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
+--  pattern = { "*.*" },
+--  callback = function()
+--    vim.lsp.buf.format()
+--  end
+--})
+
+
+
 vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
-  pattern = { "*.*" },
+  pattern = { "*.go" },
   callback = function()
-    vim.lsp.buf.format()
+    vim.opt.makeprg = "go run ."
+    vim.cmd [[ %!gofmt ]]
   end
 })
-
-
 
 vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
   pattern = { "*.php" },
@@ -61,7 +69,7 @@ vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
   end
 })
 
-vim.api.nvim_create_autocmd({ "bufread", "bufnewfile"}, {
+vim.api.nvim_create_autocmd({ "bufread", "bufnewfile" }, {
   pattern = { "*.blade.php" },
   callback = function()
     vim.opt.filetype = 'blade'
