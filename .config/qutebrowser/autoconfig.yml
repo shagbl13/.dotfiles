@@ -28,10 +28,9 @@ settings:
         ab: open https://www.betmomo.com/#/
         ad: open https://www.pdfdrive.com/
         ag: open https://github.com/
-        amb: open https://mangabuddy.com/users/bookmark
-        amn: open https://manganato.com/
+        amf: open https://mangafire.to/home
+        amn: open https://natomanga.com/
         amr: open https://mangareader.to/home
-        amt: open https://manhwatop.com/
         amw: open https://www.webtoons.com/en/
         as: open https://open.spotify.com/
         at: open https://twitch.tv
@@ -47,6 +46,7 @@ settings:
         dr: download-retry
         m: null
         mf: spawn -d firefox {url}
+        mg: spawn -d google-chrome-stable {url}
         mv: spawn -d mpv {url}
         sf: config-write-py -f
         sm: set-mark

@@ -50,7 +50,7 @@ vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
   pattern = { "*.go" },
   callback = function()
     vim.opt.makeprg = "go run ."
-    vim.cmd [[ %!gofmt ]]
+    --vim.cmd [[ %!gofmt ]]
   end
 })
 

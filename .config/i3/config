@@ -52,7 +52,7 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 # A more modern dmenu replacement is rofi:
-bindsym  $mod+d exec "rofi -modi drun,run -show drun"
+bindsym  $mod+d exec dmenu_run
 
 #bindsym $mod+d exec --no-startup-id dmenu_run
 
@@ -232,7 +232,7 @@ bar {
 exec_always --no-startup-id picom --no-fading-openclose &
 exec_always --no-startup-id setxkbmap -layout 'us,us' -variant ',dvorak' -option 'grp:shifts_toggle,ctrl:swapcaps'
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-exec_always --no-startup-id feh --bg-scale ~/.dotfiles/bg/blue_city.jpg
+exec_always --no-startup-id feh --bg-scale ~/.dotfiles/bg/blossom.jpg
 exec_always --no-startup-id qutebrowser
 exec_always --no-startup-id alacritty
 
