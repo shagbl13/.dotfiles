@@ -156,6 +156,7 @@ assign [class="Alacritty"] number $ws1
 assign [class="discord"] number $ws10
 assign [class="TelegramDesktop"] number $ws10
 assign [class="Postman"] number $ws3
+assign [class="qBittorrent"] number $ws5
 
 for_window [window_role="pop-up"] floating enable
 for_window [class="pavucontrol"] floating enable

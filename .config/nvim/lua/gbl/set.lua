@@ -46,6 +46,13 @@ vim.opt.splitright = true
 
 
 
+--vim.api.nvim_create_autocmd({ "bufwritepre" }, {
+--  pattern = { "*.*" },
+--  callback = function()
+--    vim.cmd [[ !ctags -R . ]]
+--  end
+--})
+
 vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
   pattern = { "*.go" },
   callback = function()

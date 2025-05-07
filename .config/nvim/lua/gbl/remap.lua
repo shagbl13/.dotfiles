@@ -62,12 +62,5 @@ keymap("n", "<A-t>", "<cmd>tabnew<CR>")
 
 keymap({ "n", "v" }, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-keymap("n", "+", "<C-a>")
-keymap("n", "-", "<C-x>")
-
-keymap("n", "<C-a>", "ggVG")
-keymap("n", "<C-x>", "ggVGd")
-
-keymap("n", "<leader>t", ":Git push -u origin<cr>");
 keymap("n", "<leader>t", ":Git push -u origin<cr>");
 keymap("n", "<leader>gs", ":Git<cr>")
