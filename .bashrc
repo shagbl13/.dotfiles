@@ -18,7 +18,7 @@ alias llat='exa -la --tree --icons'
 alias w='wiki-search'
 alias wh='wiki-search-html'
 
-alias p='sudo pacman -S'
+alias pp='sudo pacman -S'
 alias pS='sudo pacman -sS'
 alias py='sudo pacman -Sy'
 alias pr='sudo pacman -R'
@@ -44,9 +44,6 @@ alias yuy='yay -Suy'
 
 alias m='mkdir -p'
 
-alias cl='clear'
-
-alias c='cp -rv'
 alias sc='sudo cp -rv'
 
 alias f='sudo fdisk -l'
@@ -56,7 +53,6 @@ alias gc='git commit -a'
 alias gC='git clone'
 alias gs='git status'
 alias ga='git add'
-alias gs='git status'
 alias gp='git push'
 alias gP='git pull'
 alias gi='git init'
