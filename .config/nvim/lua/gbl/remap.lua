@@ -12,6 +12,7 @@ keymap("n", "<leader>ct", "<cmd>e ~/.dotfiles/.config/tmux/tmux.conf<cr>");
 keymap("n", "<leader>cw", "<cmd>e ~/repos/work<cr>");
 keymap("n", "<leader>cp", "<cmd>e ~/repos/personal<cr>");
 keymap("n", "<leader>cr", "<cmd>e ~/repos<cr>");
+keymap("n", "<leader>cp", "<cmd>e ~/repos/personal/todo.md<cr>");
 keymap("n", "<leader>pc", "<cmd>make<cr>");
 
 keymap("n", "<leader>gl", "<cmd>e ~/lab/<cr>");
@@ -62,5 +63,5 @@ keymap("n", "<A-t>", "<cmd>tabnew<CR>")
 
 keymap({ "n", "v" }, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
-keymap("n", "<leader>t", ":Git push -u origin<cr>");
+keymap("n", "<leader>gp", ":Git push -u origin<cr>");
 keymap("n", "<leader>gs", ":Git<cr>")

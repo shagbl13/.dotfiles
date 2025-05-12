@@ -4,6 +4,8 @@ lsp.preset("recommended")
 
 lsp.ensure_installed({
   'ts_ls',
+  'zls',
+  'ols',
   'emmet_ls',
   'intelephense',
   'rust_analyzer',
