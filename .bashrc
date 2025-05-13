@@ -21,7 +21,7 @@ alias wh='wiki-search-html'
 alias pp='sudo pacman -S'
 alias pS='sudo pacman -sS'
 alias py='sudo pacman -Sy'
-alias pr='sudo pacman -R'
+alias pR='sudo pacman -R'
 alias puy='sudo pacman -Suyy'
 alias pU="sudo pacman -U" 
 

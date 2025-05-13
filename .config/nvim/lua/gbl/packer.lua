@@ -62,17 +62,17 @@ return require('packer').startup(function(use)
         as = 'rose-pine',
     })
 
-    --use({
-    --    "folke/trouble.nvim",
-    --    config = function()
-    --        require("trouble").setup {
-    --            icons = false,
-    --            -- your configuration comes here
-    --            -- or leave it empty to use the default settings
-    --            -- refer to the configuration section below
-    --        }
-    --    end
-    --})
+    use({
+        "folke/trouble.nvim",
+        config = function()
+            require("trouble").setup {
+                icons = false,
+                -- your configuration comes here
+                -- or leave it empty to use the default settings
+                -- refer to the configuration section below
+            }
+        end
+    })
 
 
     use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
@@ -92,8 +92,8 @@ return require('packer').startup(function(use)
         requires = {
             -- LSP Support
             { 'neovim/nvim-lspconfig' },
-            { 'williamboman/mason.nvim' },
-            { 'williamboman/mason-lspconfig.nvim' },
+            { 'mason-org/mason.nvim' },
+            { 'mason-org/mason-lspconfig.nvim' },
 
             -- Autocompletion
             { 'hrsh7th/nvim-cmp' },

@@ -18,7 +18,6 @@ keymap("n", "<leader>pc", "<cmd>make<cr>");
 keymap("n", "<leader>gl", "<cmd>e ~/lab/<cr>");
 keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>");
 
-
 keymap("v", "J", ":m '>+1<CR>gv=gv")
 keymap("v", "K", ":m '<-2<CR>gv=gv")
 
