@@ -1,3 +1,4 @@
+require("gbl.function")
 require("gbl.set")
 require("gbl.remap")
 require("gbl.packer")

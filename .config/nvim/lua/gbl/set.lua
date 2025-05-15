@@ -1,5 +1,3 @@
---vim.opt.guicursor = ""
-
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
@@ -54,6 +52,15 @@ vim.opt.splitright = true
 --    vim.cmd [[ !ctags -R . ]]
 --  end
 --})
+--
+vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
+  pattern = { "*.zig" },
+  callback = function()
+    vim.opt.makeprg = "zig build && ./zig-out/bin/" .. cwd 
+    --vim.cmd [[ %!gofmt ]]
+  end
+})
+
 
 vim.api.nvim_create_autocmd({ "bufread", "bufnewfile", "bufwritepre" }, {
   pattern = { "*.go" },
