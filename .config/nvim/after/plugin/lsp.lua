@@ -1,19 +1,19 @@
 --local lsp = require("lsp-zero")
 --
-----lsp.preset("recommended")
+--lsp.preset("recommended")
 --
-----lsp.ensure_installed({
-----  'ts_ls',
-----  'emmet_ls',
-----  'intelephense',
-----  'rust_analyzer',
-----  'lua_ls',
-----  'gopls',
-----  'ltex',
-----  'html',
-----  'zls',
-----  'ols',
-----})
+--lsp.ensure_installed({
+--  'ts_ls',
+--  'emmet_ls',
+--  'intelephense',
+--  'rust_analyzer',
+--  'lua_ls',
+--  'gopls',
+--  'ltex',
+--  'html',
+--  'zls',
+--  'ols',
+--})
 --
 ---- Fix Undefined global 'vim'
 --lsp.configure('lua-language-server', {

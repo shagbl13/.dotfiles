@@ -4,6 +4,7 @@ vim.g.mapleader = " "
 
 keymap("n", "<leader>e", ":Ex<cr>")
 keymap("n", "<leader>fd", ":e ~/.dotfiles/<cr>")
+keymap("n", "<leader>sf", ":e **/*")
 keymap("n", "<leader>fn", ":e ~/.dotfiles/.config/nvim/<cr>")
 keymap("n", "<leader>fi", ":e ~/.dotfiles/.config/i3/config<cr>")
 keymap("n", "<leader>fb", ":e ~/.dotfiles/.bashrc<cr>")
