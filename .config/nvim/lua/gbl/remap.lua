@@ -17,7 +17,6 @@ keymap("n", "<leader>fm", "<cmd>e ~/repos/personal/todo.md<cr>");
 
 keymap("n", "<leader>pc", "<cmd>make<cr>");
 
-keymap("n", "<leader>gl", "<cmd>e ~/lab/<cr>");
 keymap("n", "<leader>u", "<cmd>UndotreeToggle<cr>");
 
 keymap("v", "J", ":m '>+1<CR>gv=gv")
@@ -38,7 +37,7 @@ keymap("n", "<leader>Y", [["+Y]])
 
 keymap({ "n", "v" }, "<leader>d", [["_d]])
 
-keymap("n", "Q", "<nop>")
+keymap({"n"}, "Q", "<nop>")
 
 keymap({ "n", "i" }, "<f1>", "<nop>")
 
@@ -47,9 +46,9 @@ keymap("n", "<leader>k", "<cmd>cprev<CR>zz")
 keymap("n", "<leader>l", "<cmd>lnext<CR>zz")
 keymap("n", "<leader>h", "<cmd>lprev<CR>zz")
 
-keymap("n", "<A-v>", "<cmd>vsplit<CR>")
-keymap("n", "<A-s>", "<cmd>split<CR>")
-keymap("n", "<A-c>", "<cmd>close<CR>")
+--keymap("n", "<A-v>", "<cmd>vsplit<CR>")
+--keymap("n", "<A-s>", "<cmd>split<CR>")
+--keymap("n", "<A-c>", "<cmd>close<CR>")
 
 --keymap("n", "<A-j>", "<C-w>j")
 --keymap("n", "<A-k>", "<C-w>k")

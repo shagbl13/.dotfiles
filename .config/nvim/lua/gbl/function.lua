@@ -7,7 +7,7 @@ function split_string(inputstr, sep)
 end
 
 local absolue_path = vim.fn.getcwd()
-cwd = split_string(absolue_path, '/') 
+cwd = split_string(absolue_path, '/')
 local idx = 0
 
 for _ in pairs(cwd) do
