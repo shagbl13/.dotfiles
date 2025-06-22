@@ -199,7 +199,7 @@ alias yuy='yay -Suy'
 
 PS1='[\u@\h \W]\$ '
 
-export PATH=$HOME/.local/bin:/usr/share/z:/home/gbl13/script/:$HOME/.symfony5/bin:$PATH
+export PATH=$HOME/.local/bin:$HOME/.local/scripts:$HOME/.symfony5/bin:$PATH
 export CDPATH=:$HOME:$HOME/.dotfiles:$HOME/repos:$HOME/repos/personal/:$HOME/.dotfiles/.config:$HOME/Documents/:$HOME/Documents/books/:$CDPATH
 export PGDATA=/var/lib/postgres/data
 export PGUSER=gbl13
