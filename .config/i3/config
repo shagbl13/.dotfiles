@@ -152,6 +152,7 @@ assign [class="firefox"] number $ws9
 assign [class="Google-chrome"] number $ws9
 assign [class="EpubReader"] number $ws5
 assign [class="hakuneko-desktop"] number $ws5
+assign [class="PlayOnLinux"] number $ws5
 assign [class="ktouch"] number $ws5
 assign [class="vlc"] number $ws5
 assign [class="mpv"] number $ws5
