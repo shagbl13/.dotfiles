@@ -47,7 +47,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty -e tmux
+bindsym $mod+Return exec alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -76,6 +76,7 @@ bindsym $mod+q exec qutebrowser
 bindsym $mod+t exec telegram-desktop
 bindsym $mod+c exec discord
 bindsym $mod+m exec vlc
+bindsym $mod+e exec ~/.dotfiles/.local/scripts/tmux-sessionizer
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left focus left
@@ -107,7 +108,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
+#bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -242,7 +243,7 @@ exec_always --no-startup-id setxkbmap -layout 'us,us,fr' -variant ',dvorak,' -op
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id feh --bg-scale ~/.dotfiles/bg/1185741.jpg
 exec_always --no-startup-id qutebrowser
-exec_always --no-startup-id alacritty -e tmux
+exec_always --no-startup-id alacritty
 
 
 
