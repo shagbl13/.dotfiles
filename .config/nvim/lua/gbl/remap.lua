@@ -13,7 +13,7 @@ keymap("n", "<leader>ft", "<cmd>e ~/.dotfiles/.config/tmux/tmux.conf<cr>");
 keymap("n", "<leader>fw", "<cmd>e ~/repos/work<cr>");
 keymap("n", "<leader>fp", "<cmd>e ~/repos/personal<cr>");
 keymap("n", "<leader>fr", "<cmd>e ~/repos<cr>");
-keymap("n", "<leader>fm", "<cmd>e ~/repos/personal/todo.md<cr>");
+keymap("n", "<leader>fm", "<cmd>e ~/.dotfiles/personal/todo.md<cr>");
 
 keymap("n", "<leader>pc", "<cmd>make<cr>");
 

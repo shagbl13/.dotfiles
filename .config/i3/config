@@ -68,15 +68,13 @@ bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
 
-
-
 bindsym $mod+b exec firefox
 bindsym $mod+g exec google-chrome-stable
 bindsym $mod+q exec qutebrowser
 bindsym $mod+t exec telegram-desktop
 bindsym $mod+c exec discord
 bindsym $mod+m exec vlc
-bindsym $mod+e exec ~/.dotfiles/.local/scripts/tmux-sessionizer
+#bindsym $mod+e exec ~/.dotfiles/.local/scripts/tmux-sessionizer
 
 # alternatively, you can use the cursor keys:
 # bindsym $mod+Left focus left
@@ -108,7 +106,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
-#bindsym $mod+e layout toggle split
+bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
@@ -133,7 +131,7 @@ set $ws6 "6"
 set $ws7 "7"
 set $ws8 "8"
 set $ws9 "9"
-set $ws10 "10"
+set $ws0 "0"
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -145,7 +143,7 @@ bindsym $mod+6 workspace number $ws6
 bindsym $mod+7 workspace number $ws7
 bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
-bindsym $mod+0 workspace number $ws10
+bindsym $mod+0 workspace number $ws0
 
 #Assign application to a specific workspace
 assign [class="qutebrowser"] number $ws2
@@ -157,10 +155,10 @@ assign [class="PlayOnLinux"] number $ws5
 assign [class="ktouch"] number $ws5
 assign [class="vlc"] number $ws5
 assign [class="mpv"] number $ws5
-assign [class="gnome-terminal"] number $ws1
+assign [class="alacritty"] number $ws1
 assign [class="Alacritty"] number $ws1
-assign [class="discord"] number $ws10
-assign [class="TelegramDesktop"] number $ws10
+assign [class="discord"] number $ws0
+assign [class="TelegramDesktop"] number $ws0
 assign [class="Postman"] number $ws3
 assign [class="qBittorrent"] number $ws5
 assign [class="Houdoku"] number $ws5
@@ -182,7 +180,7 @@ bindsym $mod+Shift+6 move container to workspace number $ws6
 bindsym $mod+Shift+7 move container to workspace number $ws7
 bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
-bindsym $mod+Shift+0 move container to workspace number $ws10
+bindsym $mod+Shift+0 move container to workspace number $ws0
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -190,6 +188,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+
+bindsym $mod+Shift+p exec "shutdown now"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -239,12 +239,10 @@ bar {
 #}
 
 exec_always --no-startup-id pa-applet &
+exec_always --no-startup-id nm-applet &
 exec_always --no-startup-id picom --no-fading-openclose &
 exec_always --no-startup-id setxkbmap -layout 'us,us,fr' -variant ',dvorak,' -option 'grp:shifts_toggle,ctrl:swapcaps'
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec_always --no-startup-id feh --bg-scale ~/.dotfiles/bg/1185741.jpg
 exec_always --no-startup-id qutebrowser
 exec_always --no-startup-id alacritty
-
-
-

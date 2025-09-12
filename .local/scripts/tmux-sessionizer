@@ -15,18 +15,17 @@ tmux_running=$(pgrep tmux)
 
 if [[ -z $TMUX ]] && [[ -z $tmux_running ]]; then
     tmux new-session -s $selected_name -c $selected nvim .
-    tmux new-window -t=$selected_name
-    tmux new-window -t=$selected_name
-    tmux select-window -t 1
+    tmux new-window -d -t=$selected_name -c $selected
+    tmux new-window -d -t=$selected_name -c $selected
+    tmux target-session -t=$selected_name select-window -t=1
     exit 0
 fi
 
 if ! tmux has-session -t=$selected_name 2> /dev/null; then
     tmux new-session -ds $selected_name -c $selected nvim .
-    tmux new-window -t=$selected_name
-    tmux new-window -t=$selected_name
+    tmux new-window -d -t=$selected_name -c $selected
+    tmux new-window -d -t=$selected_name -c $selected
     tmux target-session -t=$selected_name select-window -t=1
-    tmux new-session -ds $selected_name -c $selected
 fi
 
 tmux switch-client -t $selected_name

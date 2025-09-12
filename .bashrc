@@ -171,7 +171,7 @@ alias pR='sudo pacman -R'
 alias puy='sudo pacman -Suyy'
 alias pU="sudo pacman -U"
 
-alias t='tmux'
+alias t='tmux new -s normal'
 alias ta='tmux a'
 alias tas='tmux a -t'
 alias ts='tmux ls'
