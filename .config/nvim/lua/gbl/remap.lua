@@ -46,19 +46,6 @@ keymap("n", "<leader>k", "<cmd>cprev<CR>zz")
 keymap("n", "<leader>l", "<cmd>lnext<CR>zz")
 keymap("n", "<leader>h", "<cmd>lprev<CR>zz")
 
---keymap("n", "<A-v>", "<cmd>vsplit<CR>")
---keymap("n", "<A-s>", "<cmd>split<CR>")
---keymap("n", "<A-c>", "<cmd>close<CR>")
-
---keymap("n", "<A-j>", "<C-w>j")
---keymap("n", "<A-k>", "<C-w>k")
---keymap("n", "<A-h>", "<C-w>h")
---keymap("n", "<A-l>", "<C-w>l")
-
---keymap("n", "<A-p>", "<cmd>tabprevious<CR>")
---keymap("n", "<A-n>", "<cmd>tabnext<CR>")
---keymap("n", "<A-t>", "<cmd>tabnew<CR>")
-
 keymap({ "n", "v" }, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 
 keymap("n", "<leader>gp", ":Git push -u origin<cr>");
