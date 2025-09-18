@@ -1,6 +1,6 @@
 [general]
 import = [
-  "/usr/lib/node_modules/alacritty-themes/themes/Gruvbox-Dark.toml"
+  "/usr/lib/node_modules/alacritty-themes/themes/Gruvbox-Dark.toml",
 ]
 
 [window]
@@ -9,7 +9,7 @@ decorations = "Full"
 decorations_theme_variant = "Dark"
 
 [font]
-size = 10
+size = 12
 
   [font.normal]
   family = "SauceCodeProNerdFontMono"
