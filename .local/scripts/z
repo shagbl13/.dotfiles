@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+NOTE_DIR="$HOME/.dotfiles/.local/notes"
+TEMPLATE="$NOTE_DIR/template.md"
+
+CONTEXT=$1
+NEOVIM_FILE=$2
+NEOVIM_LINE=$3
+
+# Prompt for title/tags
+echo -n "Title: "
+read title
+echo -n "Tag(s, comma-separated): "
+read tags
+
+ID=$(date +"%Y%m%d_%H%M%S")
+SAFE_TITLE=$(echo "$title" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9_]/_/g')
+NOTE_FILE="$NOTE_DIR/${ID}__${SAFE_TITLE}.md"
+
+# Create file from template
+cp "$TEMPLATE" "$NOTE_FILE"
+sed -i "s/{{title}}/$title/g" "$NOTE_FILE"
+sed -i "s/{{tag}}/$tags/g" "$NOTE_FILE"
+sed -i "s/^Date:.*/Date: $(date +'%Y-%m-%d %H:%M:%S')/" "$NOTE_FILE"
+
+# Insert automatic reference if in nvim context
+if [ "$CONTEXT" == "nvim" ] && [ -n "$NEOVIM_FILE" ]; then
+    FILE_PATH=$(realpath "$NEOVIM_FILE")
+    REF="- [[$FILE_PATH#L$NEOVIM_LINE]]"
+
+    if grep -q "^References:" "$NOTE_FILE"; then
+        # Append after References:
+        sed -i "/^References:/a $REF" "$NOTE_FILE"
+    else
+        # Add section if missing
+        echo -e "References:\n$REF" >> "$NOTE_FILE"
+    fi
+fi
+
+# Open in nvim
+exec nvim "$NOTE_FILE"

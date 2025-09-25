@@ -216,3 +216,4 @@ esac
 set -o vi
 . "$HOME/.cargo/env"
 
+export PATH=$HOME/tools/adb/platform-tools:$PATH

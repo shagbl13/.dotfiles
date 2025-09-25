@@ -1,6 +1,8 @@
 local keymap = vim.keymap.set
+local zettel = require("gbl.zettle")  -- load the module
 
 vim.g.mapleader = " "
+
 
 keymap("n", "<leader>e", ":Ex<cr>")
 keymap("n", "<leader>fd", ":e ~/.dotfiles/<cr>")
@@ -50,3 +52,7 @@ keymap({ "n", "v" }, "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left>
 
 keymap("n", "<leader>gp", ":Git push -u origin<cr>");
 keymap("n", "<leader>gs", ":Git<cr>")
+
+keymap("n", "<leader>zn", zettel.create_note, { noremap = true, silent = true })
+keymap("n", "<leader>zo", zettel.open_link, { noremap = true, silent = true })
+keymap("n", "<leader>zd", ":e ~/.dotfiles/.local/notes/<CR>", { noremap = true, silent = true })

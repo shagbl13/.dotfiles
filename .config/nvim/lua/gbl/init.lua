@@ -1,4 +1,5 @@
 require("gbl.set")
+require("gbl.zettle")
 require("gbl.remap")
 require("gbl.autocmd")
 require("gbl.lazy")

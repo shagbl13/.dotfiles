@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# qutebrowser-z.sh
+# Launch Zettel in tmux from Qutebrowser
+
+SESSION_NAME="zettel"
+WINDOW_NAME="z"
+
+# Check if tmux is running
+if tmux info &>/dev/null; then
+    # tmux is running, check if session exists
+    if tmux has-session -t "$SESSION_NAME" 2>/dev/null; then
+        # Create a new window in existing session
+        tmux new-window -t "$SESSION_NAME" -n "$WINDOW_NAME" "/home/gbl13/.dotfiles/.local/scripts/z qutebrowser"
+        # Optionally switch to it
+        tmux select-window -t "$SESSION_NAME:$WINDOW_NAME"
+    else
+        # Create new session with a window
+        tmux new-session -d -s "$SESSION_NAME" -n "$WINDOW_NAME" "/home/gbl13/.dotfiles/.local/scripts/z qutebrowser"
+        tmux attach -t "$SESSION_NAME"
+    fi
+else
+    # tmux not running, start new session and attach
+    tmux new-session -s "$SESSION_NAME" -n "$WINDOW_NAME" "/home/gbl13/.dotfiles/.local/scripts/z qutebrowser"
+fi

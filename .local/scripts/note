@@ -1,0 +1,86 @@
+#!/usr/bin/env bash
+
+NOTE_DIR="$HOME/.dotfiles/.local/notes"
+TEMPLATE="$NOTE_DIR/template.md"
+
+# Context argument (optional): "nvim" or "qutebrowser"
+CONTEXT=$1
+
+tmux_note_script="
+echo -n 'Title: '
+read title
+echo -n 'Tag(s) (comma-separated): '
+read tags
+
+ID=\$(date +'%Y%m%d_%H%M%S')
+ACTUAL_DATE=\$(date +'%Y-%m-%d %H:%M:%S')
+SAFE_TITLE=\$(echo \"\$title\" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9_]/_/g')
+NOTE_FILE=\"$NOTE_DIR/\${ID}__\${SAFE_TITLE}.md\"
+TAGS_FORMATTED=\$(echo \"\$tags\" | sed 's/ *, */, /g')
+
+# Open nvim with template, replace placeholders, insert date, cursor after # Content
+nvim \"\$NOTE_FILE\" -c \"0r $TEMPLATE\" \
+  -c \":%s/{{title}}/\$title/g\" \
+  -c \":%s/{{tag}}/\$TAGS_FORMATTED/g\" \
+  -c \":%s/^Date:.*\$/Date: \$ACTUAL_DATE/\" \
+  -c \"call search('^# Content', 'w')\" \
+  -c \"normal! o\"
+
+# Context-aware reference
+REF=''
+
+if [ \"$CONTEXT\" == 'nvim' ]; then
+    REF_FILE=\$(basename \"\$NEOVIM_FILE\")
+    REF_LINE=\$NEOVIM_LINE
+    REF=\"- [[\${REF_FILE}#L\${REF_LINE}]]\"
+elif [ \"$CONTEXT\" == 'qutebrowser' ]; then
+    URL=\$(qutebrowser --print-current-url 2>/dev/null || echo '')
+    if [ ! -z \"\$URL\" ]; then
+        REF=\"- [\${URL}]\"
+    fi
+fi
+
+# If no automatic reference, offer interactive selection from existing notes
+if [ -z \"\$REF\" ]; then
+    echo 'Select references (press Enter to skip):'
+    if command -v fzf >/dev/null 2>&1; then
+        SELECTED=\$(ls -1 $NOTE_DIR/*.md | fzf -m --prompt='References> ' --preview='head -20 {}')
+        if [ ! -z \"\$SELECTED\" ]; then
+            REF=''
+            for f in \$SELECTED; do
+                FILE_BASENAME=\$(basename \"\$f\")
+                REF+=\"- [[\$FILE_BASENAME]]\"$'\\n'
+            done
+        fi
+    else
+        echo -n 'fzf not found. Add references manually (comma-separated, optional): '
+        read refs
+        if [ ! -z \"\$refs\" ]; then
+            REF=''
+            IFS=',' read -ra ref_array <<< \"\$refs\"
+            for r in \"\${ref_array[@]}\"; do
+                r_trimmed=\$(echo \"\$r\" | xargs)
+                REF+=\"- [[\${r_trimmed}]]\"$'\\n'
+            done
+        fi
+    fi
+fi
+
+# Append references correctly
+if [ ! -z \"\$REF\" ]; then
+    if grep -q '^References:' \"\$NOTE_FILE\"; then
+        # Add references under existing section
+        sed -i \"/^References:/a $REF\" \"\$NOTE_FILE\"
+    else
+        # No section exists, create it
+        echo -e \"\nReferences:\n\$REF\" >> \"\$NOTE_FILE\"
+    fi
+fi
+"
+
+# Launch tmux window/session
+if tmux ls >/dev/null 2>&1; then
+    tmux new-window bash -c "$tmux_note_script"
+else
+    tmux new-session -s tmp bash -c "$tmux_note_script"
+fi

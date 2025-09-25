@@ -716,3 +716,4 @@ config.bind('sm', 'set-mark')
 # Bindings for command mode
 config.bind('<Ctrl+j>', 'completion-item-focus next', mode='command')
 config.bind('<Ctrl+k>', 'completion-item-focus prev', mode='command')
+config.bind('<Ctrl-z>', 'spawn --detach ~/.dotfiles/.local/scripts/qutebrowser-z.sh')
