@@ -55,4 +55,4 @@ keymap("n", "<leader>gs", ":Git<cr>")
 
 keymap("n", "<leader>zn", zettel.create_note, { noremap = true, silent = true })
 keymap("n", "<leader>zo", zettel.open_link, { noremap = true, silent = true })
-keymap("n", "<leader>zd", ":e ~/.dotfiles/.local/notes/<CR>", { noremap = true, silent = true })
+keymap("n", "<leader>zd", ":tabedit ~/.dotfiles/.local/notes/<CR>", { noremap = true, silent = true })
