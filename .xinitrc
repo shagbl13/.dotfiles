@@ -54,9 +54,8 @@ xhost +SI:localuser:$USER
 # xss-lock -- slock &
 # lxpolkit &
 # picom &
-
-xrdb ~/.dotfiles/.Xresources 
-
+xrdb ~/.dotfiles/.Xresources
+i3
 #setxkbmap -layout 'us,us' -variant 'qwerty,dvorak' -option 'grp:shifts_toggle,ctrl:swapcaps'
 #xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 #feh --bg-scale ~/.dotfiles/bg/blue_city.jpg.jpg

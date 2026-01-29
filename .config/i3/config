@@ -26,7 +26,7 @@ bindsym $mod+l focus right
 
 #Assign application to a specific workspace
 assign [class="qutebrowser"] number $ws2
-assign [class="firefox"] number $ws9
+assign [class="firefox"] number $ws2
 assign [class="Google-chrome"] number $ws9
 assign [class="EpubReader"] number $ws5
 assign [class="hakuneko-desktop"] number $ws5
@@ -34,26 +34,38 @@ assign [class="PlayOnLinux"] number $ws5
 assign [class="ktouch"] number $ws5
 assign [class="vlc"] number $ws5
 assign [class="mpv"] number $ws5
-#assign [class="alacritty"] number $ws1
-#assign [class="Alacritty"] number $ws1
+assign [class="Alacritty"] number $ws1
 assign [class="discord"] number $ws0
 assign [class="TelegramDesktop"] number $ws0
 assign [class="Postman"] number $ws3
 assign [class="qBittorrent"] number $ws5
 assign [class="Houdoku"] number $ws5
 assign [class="Mangayomi"] number $ws5
+assign [class="Inscape"] number $ws7
+assign [class="Gimp"] number $ws7
+assign [class="teamlogger"] number $ws3
 
+
+for_window [class="Xdm-app" ] floating enable
+for_window [class="pavucontrol" ] floating enable
+for_window [class="dolphin" ] floating enable
+for_window [window_role="pop-up"] floating enable
+
+popup_during_fullscreen smart
 # Zettel global bindings
 bindsym $mod+Shift+n exec --no-startup-id alacritty -t Zettel -e $HOME/.dotfiles/.local/scripts/z nvim
+bindsym $mod+Shift+t exec --no-startup-id alacritty -t TODO -e $HOME/.dotfiles/.local/scripts/todo
 bindsym $mod+Shift+o exec --no-startup-id alacritty -t Zettel -e nvim $HOME/.dotfiles/.local/notes/
 
 # Start apps
 bindsym $mod+b exec firefox
 bindsym $mod+g exec google-chrome-stable
+bindsym $mod+Shift+g exec gimp
 bindsym $mod+q exec qutebrowser
 bindsym $mod+t exec telegram-desktop
 bindsym $mod+c exec discord
 bindsym $mod+m exec vlc
+bindsym $mod+\ exec pavucontrol
 
 # Move focused window
 bindsym $mod+Shift+h move left
@@ -133,9 +145,10 @@ bar {
 # Autostart apps and settings
 exec_always --no-startup-id pa-applet &
 exec_always --no-startup-id nm-applet &
+exec_always --no-startup-id discord &
 exec_always --no-startup-id picom --no-fading-openclose &
-exec_always --no-startup-id setxkbmap -layout 'us,us,fr' -variant ',dvorak,' -option 'grp:shifts_toggle,ctrl:swapcaps'
+exec_always --no-startup-id setxkbmap -layout 'us,fr,us' -variant ',,dvorak' -option 'grp:shifts_toggle,ctrl:swapcaps'
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-exec_always --no-startup-id feh --bg-scale ~/.dotfiles/bg/1185741.jpg
+exec_always --no-startup-id feh --bg-scale ~/.dotfiles/bg/wallpaperflare.com_wallpaper.jpg
 exec_always --no-startup-id qutebrowser
 exec_always --no-startup-id alacritty

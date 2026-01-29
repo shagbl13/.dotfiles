@@ -54,5 +54,15 @@ if [ "$CONTEXT" == "nvim" ] && [ -n "$NEOVIM_FILE" ]; then
     fi
 fi
 
+# References for qutebrowser (URL passed as argument)
+if [ "$CONTEXT" == "qutebrowser" ] && [ -n "$URL" ]; then
+    REF="- [[$URL]]"
+    if grep -q "^References:" "$NOTE_FILE"; then
+        sed -i "/^References:/a $REF" "$NOTE_FILE"
+    else
+        echo -e "References:\n$REF" >> "$NOTE_FILE"
+    fi
+fi
+
 # Open in nvim
 exec nvim "$NOTE_FILE"

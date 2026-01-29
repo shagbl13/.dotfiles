@@ -83,7 +83,7 @@ local servers = {
   --    https://github.com/pmizio/typescript-tools.nvim
   --
   emmet_ls = {
-    filetypes = { "blade", "html", "htmldjango", "javascriptreact", "typescriptreact", "vue" },
+    filetypes = {"blade", "html", "htmldjango", "javascriptreact", "typescriptreact", "vue" },
   },
   stimulus_ls = {
     filetypes = { "blade", "eruby", "html", "ruby" },

@@ -273,7 +273,7 @@ c.fileselect.handler = 'external'
 # the file to be written to. If not contained in any argument, the
 # standard output of the command is read instead.
 # Type: ShellCommand
-c.fileselect.single_file.command = ['emacsclient', '-e', '(progn (setq qute-filename "{}")  (dired "~/"))']
+#c.fileselect.single_file.command = ['emacsclient', '-e', '(progn (setq qute-filename "{}")  (dired "~/"))']
 
 # Command (and arguments) to use for selecting multiple files in forms.
 # The command should write the selected file paths to the specified file
@@ -719,5 +719,5 @@ config.bind('<Ctrl+k>', 'completion-item-focus prev', mode='command')
 # Assuming you use alacritty
 TERMINAL = "alacritty -e"
 
-config.bind('zn', f'spawn {TERMINAL} sh -c $HOME/.dotfiles/.local/scripts/z qutebrowser {url}')
+config.bind('zn', f'spawn {TERMINAL} sh -c "$HOME/.dotfiles/.local/scripts/z qutebrowser \\"{{url}}\\""' )
 
