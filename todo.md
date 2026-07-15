@@ -2,10 +2,11 @@
 d6wuc4w2
 
 # TODO LIST
-Using C, Ziglang, Golang, Php, Odin
-## [TODO] Rewrite the note taking z script from scratch
+Using C, Golang, Php, Odin
+## [DONE] Build an cmd app for studient management
+## [NEXT] Build a Compiler (Tiny BASIC)
 ## [TODO] Build an Interpreter (Tiny BASIC)
-## [TODO] Build a Compiler (Tiny BASIC)
+## [TODO] Rewrite the note taking zettle script from scratch
 ## [TODO] Build a Transpiler
 ## [TODO] Build A Manga Reader (Search for the name)
 ## [TODO] Build a Terminal Based Text Editor
@@ -30,8 +31,8 @@ Using C, Ziglang, Golang, Php, Odin
 ## [TODO] Build a Vim Based Web Browser
  [ ] Terminal Based with daemon
  [ ] GUI Client
-## [TODO] Write a PostgreSQL/MySQL Driver in Zig
-## [TODO] Build a File downloader in zig (IDM/XDM)
+## [TODO] Write a PostgreSQL/MySQL Driver in C
+## [TODO] Build a File downloader in C (IDM/XDM)
 ## [TODO] Build an pdf/epub reader
 ## [TODO] Build a media player
  [ ] Terminal Based with daemon (only for mp3)

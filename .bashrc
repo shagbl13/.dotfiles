@@ -48,7 +48,7 @@ alias mpva='mpv --no-audio-display'
 
 PS1='[\u@\h \W]\$ '
 
-export PATH=$HOME/.local/bin:$HOME/.local/scripts:$HOME/.symfony5/bin:$PATH:$HOME/go/bin/
+export PATH=$HOME/.local/bin:$HOME/.local/scripts:$HOME/.symfony5/bin:$HOME/mobile_dev/flutter/bin/:$HOME/.local/npm/bin:$PATH:$HOME/go/bin/
 export CDPATH=:$HOME:$HOME/.dotfiles:$HOME/repos:$HOME/repos/personal/:$HOME/.dotfiles/.config:$HOME/Documents/:$HOME/Documents/books/:$CDPATH
 export PGDATA=/var/lib/postgres/data
 export PGUSER=gbl13
@@ -57,6 +57,12 @@ export EDITOR=nvim
 export GOPATH=$HOME/go
 export GOBIN=$HOME/go/bin
 
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_SDK_ROOT=$ANDROID_HOME
+
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/cmdline-tools/latest/bin
+export PATH=$PATH:$ANDROID_HOME/emulator
 
 ## Enable the subsequent settings only in interactive sessions
 #case $- in

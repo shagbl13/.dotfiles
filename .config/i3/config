@@ -145,7 +145,7 @@ bar {
 # Autostart apps and settings
 exec_always --no-startup-id pa-applet &
 exec_always --no-startup-id nm-applet &
-exec_always --no-startup-id discord &
+#exec_always --no-startup-id discord &
 exec_always --no-startup-id picom --no-fading-openclose &
 exec_always --no-startup-id setxkbmap -layout 'us,fr' -variant ',' -option 'grp:shifts_toggle,ctrl:swapcaps'
 exec_always --no-startup-id xinput set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1

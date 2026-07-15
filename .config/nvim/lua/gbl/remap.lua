@@ -1,5 +1,5 @@
 local keymap = vim.keymap.set
-local zettel = require("gbl.zettle")  -- load the module
+local zettel = require("gbl.zettle") -- load the module
 
 vim.g.mapleader = " "
 
@@ -30,6 +30,8 @@ keymap("n", "<C-u>", "<C-u>zz")
 keymap("n", "n", "nzzzv")
 keymap("n", "N", "Nzzzv")
 
+--keymap("n", "<A-f>", ":find ")
+
 keymap({ "n", "x" }, "<leader>P", [["+p]])
 
 -- next greatest remap ever : asbjornHaland
@@ -39,7 +41,7 @@ keymap("n", "<leader>Y", [["+Y]])
 
 keymap({ "n", "v" }, "<leader>d", [["_d]])
 
-keymap({"n"}, "Q", "<nop>")
+keymap({ "n" }, "Q", "<nop>")
 
 keymap({ "n", "i" }, "<f1>", "<nop>")
 

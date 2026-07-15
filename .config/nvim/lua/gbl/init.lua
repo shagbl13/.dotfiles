@@ -2,7 +2,7 @@ require("gbl.set")
 require("gbl.zettle")
 require("gbl.remap")
 require("gbl.autocmd")
-require("gbl.lazy")
+require("gbl.packer")
 require("gbl.function")
 
 vim.cmd([[ filetype plugin on ]])
